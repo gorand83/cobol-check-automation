@@ -28,3 +28,8 @@ jobs:
           ls -la cobol
           test -f cobol/HELLO.cbl
           echo "COBOL source file found"
+      - name: Verify HELLO program content
+        run: |
+          grep "PROGRAM-ID. HELLO" cobol/HELLO.cbl
+          grep "HELLO FROM GITHUB ACTIONS" cobol/HELLO.cbl
+          echo "HELLO COBOL content verified"
