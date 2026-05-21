@@ -23,3 +23,8 @@ jobs:
           ZOWE_PASSWORD: ${{ secrets.ZOWE_PASSWORD }}
         run: |
           echo "Secrets loaded successfully"
+      - name: Verify COBOL file exists
+        run: |
+          ls -la cobol
+          test -f cobol/HELLO.cbl
+          echo "COBOL source file found"
